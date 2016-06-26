@@ -1,8 +1,6 @@
 version: 0.0
 os: linux
 files:
-  - source: codedeploy/upstart/codedeploy.conf
-    destination: /etc/init/
   - source: /
     destination: /home/ec2-user/go/src/github.com/hoohawa/golang_web
 permissions:
