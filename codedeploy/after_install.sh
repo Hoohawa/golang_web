@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# set golang path
-echo "export PATH=$PATH:/home/ec2-user/go/bin" >> $HOME/.bashrc
-
 # make golang workspace
 cd $HOME
 mkdir go
