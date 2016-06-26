@@ -120,7 +120,7 @@ func main() {
 		handler.ServeHTTP(c.Writer, c.Request)
 	})
 
-	r.Run()
+	r.Run(":80")
 }
 
 func SetupRoomRepository() models.RoomRepository {
