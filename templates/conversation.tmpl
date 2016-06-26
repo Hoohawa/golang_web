@@ -1,0 +1,51 @@
+{{ define "conversation.tmpl" }}
+<html>
+
+<head>
+	<title>{{ .title }}</title>
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script>
+	$(function() {
+		console.log("Initializing...")
+		url = 'ws://localhost:8080/ws';
+		c = new WebSocket(url);
+	      
+     	$("#sendButton").click(function () {
+     		console.log("Clicked send");
+     		sendMessage("test");
+     	})
+
+      	sendMessage = function(data){
+      		console.log("Sending: " + data);
+  			data = $("#messageInput").val();
+  			$("#messageInput").val("");
+      	  	c.send(data);
+      	}
+
+      	c.onmessage = function(msg){
+      		console.log("Received" + msg);
+      		var messageItem = "<li>" + msg.data + "</li>";
+      	  	$("#messageList").append(messageItem)
+      	}
+	})
+	    </script>
+</head>
+
+<h1>
+    Conversation {{ .title }}
+</h1>
+
+<body>
+	<p>
+		<ul id="messageList"></ul>
+	</p>
+	<p>
+		Message:
+		<input id="messageInput" type="text" />
+		<input id="sendButton" type="submit" value="Send"/>
+	</p>
+
+<body>
+
+</html>
+{{ end }}

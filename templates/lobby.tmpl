@@ -1,0 +1,34 @@
+{{ define "lobby.tmpl" }}
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/lobby.css">
+</head>
+<body >
+	<div class="mainContainer">
+		<h1>
+		    HooChat Lobby
+		</h1>
+		<p> Welcome {{.user}}, click a room to begin chatting </p>
+		<div class="roomList">
+			<ul>
+			{{range .roomNames}}
+				<li>
+					{{.Name}}
+					<a href="/room/{{.Id}}">Join</a>
+				</li>
+			{{end}}
+			</ul>
+		</div>
+		<div class="">
+			<form id="createRoom" method="POST">
+				<p>Create new room: </p>
+				<input id="username" type="text" placeholder="Room name" />
+				<input id="loginButton" type="submit" value="Create room" class="button" />
+		</form>
+		</div>
+
+	</div>
+</body>
+
+</html>
+{{ end }}

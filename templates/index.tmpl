@@ -1,0 +1,20 @@
+{{ define "index.tmpl" }}
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="../css/index.css">
+</head>
+<body >
+	<div class="mainContainer">
+		<h1>
+		    HooChat
+		</h1>
+		<form action="login" method="POST">
+			<p>Choose a name to start chatting</p>
+			<input type="text" name="username" placeholder="You username" />
+			<input id="loginButton" type="submit" value="Enter lobby" class="button" />
+		</form>
+	</div>
+</body>
+
+</html>
+{{ end }}
