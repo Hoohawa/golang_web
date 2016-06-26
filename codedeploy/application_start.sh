@@ -1,4 +1,4 @@
 #!/bin/bash
 
 # Kick of the web app
-golang_web
+#/home/ec2-user/go/bin/golang_web
