@@ -4,7 +4,7 @@ files:
   - source: codedeploy/upstart/codedeploy.conf
     destination: /etc/init/
   - source: /
-    destination: /home/ec2-user/goc/src/github.com/hoohawa/golang_web
+    destination: /home/ec2-user/go/src/github.com/hoohawa/golang_web
 permissions:
   - object: /
     pattern: "**"

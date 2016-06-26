@@ -5,21 +5,21 @@ echo "export PATH=$PATH:/home/ec2-user/go/bin" >> $HOME/.bashrc
 
 # make golang workspace
 cd $HOME
-mkdir gocode
-echo "export GOPATH=$HOME/gocode" >> $HOME/.bashrc
+mkdir go
+echo "export GOPATH=$HOME/go" >> $HOME/.bashrc
 echo "export PATH=$PATH:$GOPATH/bin" >> $HOME/.bashrc
 
 # activate changes
 source $HOME/.bashrc
 
-# install golang dependency management tool
-go get github.com/tools/godep
+# install dependencies
+go get github.com/gin-gonic/gin
+go get github.com/golang/protobuf/proto
+go get github.com/manucorporat/sse
+go get golang.org/x/net/context
 
 # go to golang app
 cd $GOPATH/src/github.com/hoohawa/golang_web/
-
-# restore dependencies
-godep restore
 
 # make binary
 go install
