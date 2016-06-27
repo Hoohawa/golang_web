@@ -8,6 +8,9 @@ echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.bashrc
 # activate changes
 source $HOME/.bashrc
 
+echo $GOPATH >> log.txt
+echo $PATH >> log.txt
+
 # install golang dependencies
 go get github.com/gin-gonic/gin
 go get golang.org/x/net/websocket
