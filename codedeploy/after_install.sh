@@ -11,6 +11,7 @@ source $HOME/.bashrc
 pwd >> log.txt
 cd $HOME
 pwd >> log.txt
+whoami >> log.txt
 echo $GOPATH >> log.txt
 echo $PATH >> log.txt
 
