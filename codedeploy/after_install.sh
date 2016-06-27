@@ -7,7 +7,7 @@ go get github.com/manucorporat/sse
 go get golang.org/x/net/context
 
 # go to golang app
-cd $GOPATH/src/github.com/hoohawa/golang_web/
+cd /home/ubuntu/go/src/github.com/hoohawa/golang_web/
 
 # make binary
 go install
