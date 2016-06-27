@@ -1,14 +1,16 @@
 #!/bin/bash
 
 # make golang workspace
-echo "export GOPATH=/home/ubuntu/go" >> /home/ubuntu/.bashrc
-echo "export PATH=$PATH:/home/ubuntu/go/bin" >> /home/ubuntu/.bashrc
-echo "export PATH=$PATH:/usr/local/go/bin" >> /home/ubuntu/.bashrc
+mkdir $HOME/go
+echo "export GOPATH=$HOME/go" >> $HOME/.bashrc
+echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.bashrc
+echo "export PATH=$PATH:$GOPATH/bin" >> $HOME/.bashrc
 
 # activate changes
-source /home/ubuntu/.bashrc
+source $HOME/.bashrc
 
 # install dependencies
+echo $GOPATH >> /home/ubuntu/log.txt
 whoami >> /home/ubuntu/log.txt
 pwd >> /home/ubuntu/log.txt
 echo $PATH >> /home/ubuntu/log.txt
