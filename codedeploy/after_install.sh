@@ -4,7 +4,7 @@
 mkdir $HOME/go
 echo "export GOPATH=$HOME/go" >> $HOME/.bashrc
 echo "export PATH=$PATH:$GOPATH/bin" >> $HOME/.bashrc
-echo "export PATH=$PATH:/usr/local/go/bin/go" >> $HOME/.bashrc
+echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.bashrc
 # activate changes
 source $HOME/.bashrc
 
