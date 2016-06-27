@@ -1,6 +1,8 @@
 version: 0.0
 os: linux
 files:
+  - source: codedeploy/upstart/golang_web.conf
+    destination: /etc/init/
   - source: /
     destination: /home/ubuntu/go/src/github.com/hoohawa/golang_web
 permissions:
