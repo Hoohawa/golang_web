@@ -3,11 +3,6 @@
 apt-get update -y
 apt-get upgrade -y
 
-# install dependencies
-apt-get install mercurial git gcc libc6-dev -y
-
 # install golang
-cd /home/ubuntu
-hg clone -u release https://code.google.com/p/go
-cd go/src
-./all.bash
+wget https://storage.googleapis.com/golang/go1.6.2.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go1.6.2.linux-amd64.tar.gz
