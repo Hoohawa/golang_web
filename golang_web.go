@@ -6,6 +6,8 @@ import (
 	"github.com/hoohawa/golang_web/models"
 	"golang.org/x/net/websocket"
 	"net/http"
+	"os"
+	"path/filepath"
 )
 
 var userRepo models.UserRepository
@@ -15,11 +17,10 @@ func main() {
 	// init repositories
 	userRepo = SetupUserRepository()
 	roomRepo = SetupRoomRepository()
-	//
 
 	r := gin.Default()
 
-	r.LoadHTMLGlob("templates/*")
+	r.LoadHTMLGlob(mapAppPath("templates/*"))
 	r.Static("/css", "./css")
 
 	r.GET("/", func(c *gin.Context) {
@@ -120,7 +121,13 @@ func main() {
 		handler.ServeHTTP(c.Writer, c.Request)
 	})
 
-	r.Run(":80")
+	r.Run()
+}
+
+func mapAppPath(relativePath string) string {
+	fullPath := filepath.Join(os.Getenv("GOPATH"), "src/github.com/hoohawa/golang_web", relativePath)
+	println(fullPath)
+	return fullPath
 }
 
 func SetupRoomRepository() models.RoomRepository {
