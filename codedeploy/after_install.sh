@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # install dependencies
+pwd >> /home/ubuntu/log.txt
+echo $PATH >> /home/ubuntu/log.txt
 go get github.com/gin-gonic/gin
 
 # go to golang app
