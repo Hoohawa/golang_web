@@ -121,12 +121,12 @@ func main() {
 		handler.ServeHTTP(c.Writer, c.Request)
 	})
 
-	r.Run()
+	r.Run(":80")
 }
 
 func mapAppPath(relativePath string) string {
 	fullPath := filepath.Join(os.Getenv("GOPATH"), "src/github.com/hoohawa/golang_web", relativePath)
-	println(fullPath)
+	fmt.Printf("Looking for template files in %s\n", fullPath)
 	return fullPath
 }
 
