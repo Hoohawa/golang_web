@@ -8,6 +8,9 @@ echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.bashrc
 # activate changes
 source $HOME/.bashrc
 
+pwd >> log.txt
+cd $HOME
+pwd >> log.txt
 echo $GOPATH >> log.txt
 echo $PATH >> log.txt
 
