@@ -15,7 +15,7 @@ echo $PATH >> log.txt
 
 # install golang dependencies
 go get github.com/gin-gonic/gin
-go get golang.org/x/net/websocket
+go get golang.org/x/net/websocketrm -
 
 # go to golang app
 cd $GOPATH/src/github.com/hoohawa/golang_web/
