@@ -6,7 +6,7 @@
 	<script>
 	$(function() {
 		console.log("Initializing...")
-		url = 'ws://localhost:8080/room-ws/{{.Room.Id}}/';
+		url = 'ws://{{.Hostname}}/room-ws/{{.Room.Id}}/';
 		c = new WebSocket(url);
 	      
      	$("#sendButton").click(function () {
