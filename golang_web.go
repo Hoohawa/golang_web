@@ -126,8 +126,7 @@ func main() {
 }
 
 func mapAppPath(relativePath string) string {
-
-	fullPath := filepath.Join(os.Getenv("HOME"), "go/src/github.com/hoohawa/golang_web", relativePath)
+	fullPath := filepath.Join(os.Getenv("GOPATH"), "src/github.com/hoohawa/golang_web", relativePath)
 	fmt.Printf("Looking for template files in %s\n", fullPath)
 	return fullPath
 }
