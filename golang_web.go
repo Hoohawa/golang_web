@@ -122,7 +122,7 @@ func main() {
 		handler.ServeHTTP(c.Writer, c.Request)
 	})
 
-	r.Run(":80")
+	r.Run(":8080")
 }
 
 func mapAppPath(relativePath string) string {
